@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<div class="container text-center mt-4 mb-4">
+    {% if message %}
+    <h1 id="message">{{message}}</h1>
+    {% endif %}
+    <a href="{% url 'index' %}"  id="back">Back to the main page!</a>
+    {% endblock %}
+</div>

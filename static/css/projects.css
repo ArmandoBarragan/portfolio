@@ -1,0 +1,26 @@
+.project-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5em;
+    margin: 1.5em 1em;
+    align-content: center;
+}
+
+.project-info p {
+    -webkit-hyphens: manual;
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+
+h5 {
+    font-size: 15px;
+    /* background-color: #9448bc; */
+    line-height:2.5em;
+    background-color: #38A3A5;
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 25px;
+
+}

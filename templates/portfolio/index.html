@@ -1,0 +1,103 @@
+{% extends 'portfolio/base.html' %}
+{% load widget_tweaks %}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects.css' %}">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/scrambler.css' %}">
+{% endblock %}
+{% block content %}
+<main class="">
+    <div class="projects container">
+        <div class=" card project-holder d-flex justify-content-center row text-left">
+            <div class="project-info col-md">
+                <h3>Store database</h3>
+                <div class="mt-2 mb-2">
+                    <h5 class="django">Django</h5>
+                    <h5 class="html">HTML</h5>
+                    <h5 class="bootstrap">Bootstrap</h5>
+                </div>
+                <p>
+                    This was a school project with too much effort put into. While my class built it with Wampserver, I
+                    wanted to use a more updated technology. With it, you can search among the products by their name,
+                    create categories, upload, update and delete products.
+                </p>
+                <a href="{% url 'store' %}">Watch it work!</a>
+                <br>or<br>
+                <a href="https://github.com/ArmandoBarragan/ProyectoWeb">
+                    <p>See the code</p>
+                </a>
+            </div>
+        </div>
+        <div class=" card project-holder d-flex justify-content-center row text-left">
+            <div class="project-info col-md">
+                <h3>Encryptor</h3>
+                <div class="mt-2 mb-2">
+                    <h5>Javascript</h5>
+                </div>
+                <p>I was at my third semester of system engineering and my lineal algebra teacher mentioned one of the
+                    classes subject was one of the first security methods, as it was used for encrypting strings.
+                </p>
+                <a href="https://github.com/ArmandoBarragan/scrambler" target="_blank">
+                    <p>See the code</p>
+                </a>
+                <div class="row justify-content-center" id="scrambler">
+                    <div class="column p-3">
+                        <p>Enter text here</p>
+                        <input type="text" id="originalInput" class="form-control">
+                        <button id="scrambleBtn" class="btn btn-light mt-2">Scramble</button>
+                        <p>Here's your translation</p>
+                        <input type="text" id="scarmbledResult" class="form-control" readonly>
+                    </div>
+                    <div class="column p-3">
+                        <p>Scrambled text</p>
+                        <input type="text" id="scrambledInput" class="form-control">
+                        <button id="unscrambleBtn" class="btn btn-light mt-2">Unscramble</button>
+                        <p>Here's your translation</p>
+                        <input type="text" id="unscrambledResult" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form">
+        <form class="container mt-2 mb-2" action="{% url 'send' %}" method="POST">
+            <h3>If need a little more, be welcome to take a look at my 
+                {% if english %}
+                {% load static %}
+                <a href="{% static 'CVArmandoBarraganEN.pdf' %}">curriculum</a>
+                {% else %}
+                {% load static %}
+                <a href="{% static 'CVArmandoBarraganES.pdf' %}">curriculum</a>
+                {% endif %}
+                , or if you are convinced that I
+                can help, feel free to contact me!</h3>
+            {% csrf_token %}
+            <div class="row">
+                <div class="form-group col-md col-sm text-left">
+                    <label for="{{form.name.id_for_label}}">{{form.name.label}}</label>
+                    {% render_field form.name class='form-control' %}
+                </div>
+                <div class="form-group col-md col-sm text-left">
+                    <label for="{{form.sender_email.id_for_label}}">Your email</label>
+                    {% render_field form.sender_email class='form-control' %}
+                </div>
+            </div>
+            <div class="form-group text-left">
+                <label for="{{form.message.id_for_label}}">How can I help?</label>
+                <!-- {% render_field form.message class='form-control' type="area"%} -->
+                <textarea name="{{form.message.name}}" id="{{form.message.id_for_label}}" class="form-control" cols="30"
+                    rows="10"></textarea>
+            </div>
+            <div class="text-right">
+                <input type="submit" class="btn btn-light">
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+{% block extrajs %}
+{% load static %}
+<script src="{% static 'scrambler.js' %}"></script>
+{% endblock %}

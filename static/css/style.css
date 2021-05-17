@@ -1,0 +1,60 @@
+#presentation{
+    color: black;
+    margin: 0vw;
+    background-color: #F5EDF0;
+    padding: 10vh;
+}
+nav{
+background-color:#29274C;
+}
+.project-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1.5em;
+    margin: 1.5em 1em;
+    align-content: center;
+}
+.img{
+    max-width: 30vw;
+}
+
+.project-info p {
+    -webkit-hyphens: manual;
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+
+h5 {
+    font-size: 15px;
+    /* background-color: #9448bc; */
+    line-height:2.5em;
+    background-color: #38A3A5;
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 25px;
+
+}
+#form{
+    background-color:#29274C;
+    padding: 2em;
+    color: #F5EDF0;
+}
+#form input, #form textarea{
+    background-color: snow;
+}
+#back{
+    background-color: #29274C;
+    padding: .5em;
+    margin: 3em;
+    border-radius:25px;
+    color: white;
+}
+#message{
+    margin: 2em 1em;
+}
+
+#scrambler{
+    background-color: #F5EDF0;
+}

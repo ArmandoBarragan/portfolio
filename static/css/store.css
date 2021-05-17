@@ -1,0 +1,15 @@
+p {
+    /* background-color: #419D78; */
+    padding: 5px;
+}
+#main, #container-edit {
+    margin-top: 5px;
+}
+nav {
+    background-color: #F5EDF0;
+    color: #29274C;
+}
+
+h1{
+    color: #3D3D3D;
+}
