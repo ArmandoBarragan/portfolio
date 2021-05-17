@@ -61,7 +61,7 @@ def update(request, pk):
         if 'image' in request.FILES:
             product.image = request.FILES['image']
         else:
-            product.image = '../media/broken.png'
+            product.image = None
         
         utils.replace_product_attributes(product, product_form)
         product_form.save()
